@@ -79,7 +79,7 @@ Note that I'm adding `form.valid && onSubmit(...)` to our `(ngSubmit)` event. Th
 </div>
 ```
 
-Now that we have this reference, we can use it to check for the different kind of validation errors. There are different approaches to visualizing validation errors. Check out the [Forms Validation cookbook on the Angular IO site]() for more details. For now we will simply hard code them in our template.
+Now that we have this reference, we can use it to check for the different kind of validation errors. There are different approaches to visualizing validation errors. Check out the [Forms Validation cookbook on the Angular IO site](https://angular.io/docs/ts/latest/cookbook/form-validation.html) for more details. For now we will simply hard code them in our template.
 
 ```html
 <div>
@@ -101,7 +101,7 @@ Within that div, we can then do some more fine-grained checks for the kind of er
 
 Ok, now that you've seen how to add the build-in validators, let's build the super useful "JuriNameValidator", a validator that only allows "Juri" to be entered in a textbox. Sounds reasonable, doesn't it?
 
-So first we need to define and implement our so-called **validation factory**. Don't let be scared away, it's a simple function that builds and returns our validation function. We get an `AbstractControl` as parameter to our validation function that can be used to access the underlying field value, by using the according `value` property. If our validation check is valid, we return `null`, otherwise we return an object with a property `juriName` containing itself a property `valid` set to false.
+So first we need to define and implement our so-called **validation factory**. Don't be scared, it's a simple function that builds and returns our validation function. We get an `AbstractControl` as parameter to our validation function that can be used to access the underlying field value, by using the according `value` property. If our validation check is valid, we return `null`, otherwise we return an object with a property `juriName` containing itself a property `valid` set to false.
 
 ```javascript
 import { AbstractControl, ValidatorFn } from '@angular/forms';
